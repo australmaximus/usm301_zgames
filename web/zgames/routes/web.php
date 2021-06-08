@@ -12,7 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route:view(rut,nombreDeVistaSinBladePuntPHP)->name(nombreRutaQueSeUsaEnRoute);
+Route::view("/","home")->name("home");
+Route::view("/agregar_consola","agregar_consola")->name("agregar_consola");
+Route::view("/ver_consolas","ver_consolas")->name("ver_consolas");
+Route::view("/agregar_juego","agregar_juego")->name("agregar_juego");
+Route::view("/ver_juegos","ver_juegos")->name("ver_juegos");
