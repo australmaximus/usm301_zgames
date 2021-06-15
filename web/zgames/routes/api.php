@@ -3,6 +3,10 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\ConsolasController;
+//Quiero usar el controlador, asi que lo importo, se importa con
+//use namespace/NombreClase
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,3 +21,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+//:: llamada a un metodo estatico
+//Agregar ruta, la ruta puede ser POST o GET //POST (para enviar cosas a la BD) // GET para obtener
+Route::get("marcas/get", [ConsolasController::class, "getMarcas"]);
+//Route:get("url", [controlador::class, "metodo"]);
