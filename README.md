@@ -24,9 +24,9 @@
 ``
     composer create-project laravel/laravel nombreApp
 ``
-``
-    por si falla:
 
+## por si falla:
+``
     chmod -R 777 nombreApp/storage
 ``
 
