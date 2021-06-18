@@ -26,4 +26,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 //:: llamada a un metodo estatico
 //Agregar ruta, la ruta puede ser POST o GET //POST (para enviar cosas a la BD) // GET para obtener
 Route::get("marcas/get", [ConsolasController::class, "getMarcas"]);
-//Route:get("url", [controlador::class, "metodo"]);
+//Route:get("url(endpoint)", [controlador::class, "metodo"]);
+
+Route::get('consolas/get', [ConsolasController::class, "getConsolas"]);
+
+
+//TODO: esto tiene que cambiar, esta entero feo
+Route::get('consolas/post', [ConsolasController::class, "crearConsola"]);
