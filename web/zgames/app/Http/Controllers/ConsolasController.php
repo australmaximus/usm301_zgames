@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
+// Request: un objeto php que permite acceder a las cosas que me mandaron de la interfaz
 
 //importar modelo
 use App\Models\Consola;
@@ -33,15 +34,20 @@ class ConsolasController extends Controller
     /**
     *Esta funcion va a registrar una consola de ejemplo en la BD
     *TODO: Mejorar esto para que no sea un ejemplo
+    * Una request es un objeto php que permite acceder a las cosas que me mandaron
+    * desde la interfaz (desded el formulario)
+    * CUANDO EL METODO RECIBE COSAS EL REQUEST VA EN LOS PARENTESIS
     */
-    public function crearConsola(){
+    public function crearConsola(Request $request){
+        $input = $request->all(); //Genera un arreglo con todo lo que mando la interfaz
+        //Cuando hablo de la interfaz hablo de javascript
         //Equivalente a un INSER INTO bla bla
         $consola = new Consola();
-        $consola->nombre = "Nintendo Switch";
-        $consola->marca = "Nintendo";
-        $consola->anio = 2017;
+        $consola->nombre = $input["nombre"];
+        $consola->marca = $input["marca"];
+        $consola->anio = $input["anio"];
 
-        $consola->save();
+        $consola->save(); //guarda en la base de datos
         return $consola;
     }
 

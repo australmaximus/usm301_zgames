@@ -28,8 +28,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get("marcas/get", [ConsolasController::class, "getMarcas"]);
 //Route:get("url(endpoint)", [controlador::class, "metodo"]);
 
+//mostrar lista de consolas
 Route::get('consolas/get', [ConsolasController::class, "getConsolas"]);
 
 
-//TODO: esto tiene que cambiar, esta entero feo
-Route::get('consolas/post', [ConsolasController::class, "crearConsola"]);
+//metodo post para ingresar en la base de datos
+Route::post('consolas/post', [ConsolasController::class, "crearConsola"]);

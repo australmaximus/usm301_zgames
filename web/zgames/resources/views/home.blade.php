@@ -20,13 +20,13 @@
             </select>
           </div>
           <div class="mb-3">
-            <label for="year-txt" class="form-label">Año de Lanzamiento</label>
-            <input type="number" min="0" class="form-control" id="year-txt">
+            <label for="anio-txt" class="form-label">Año de Lanzamiento</label>
+            <input type="number" min="0" class="form-control" id="anio-txt">
           </div>
         </div>
 
         <div class="card-footer d-grid gap-1">
-          <button class="btn btn-info">Registrar</button>
+          <button id="registrar-btn" class="btn btn-info">Registrar</button>
         </div>
       </div>
     </div>
@@ -35,5 +35,6 @@
 
 <!-- Esto define el contenido de la seccion javascript del master-->
 @section("javascript")
+  <script src="{{asset('js/servicios/consolasService.js')}}"></script>
   <script src="{{asset('js/home.js')}}"></script>
 @endsection
