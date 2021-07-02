@@ -15,7 +15,12 @@ const cargarMarcas = async()=>{
     });
 };
 
-cargarMarcas();
+//Esto ejecuta un codigo asegurandose que el total de la pagina
+//incluidos todos sus recursos este cargado antes de ejecutar
+document.addEventListener("DOMContentLoaded", ()=>{
+    cargarMarcas();
+});
+
 
 document.querySelector("#registrar-btn").addEventListener("click", async ()=>{
     let nombre = document.querySelector("#nombre-txt").value;
@@ -37,5 +42,12 @@ document.querySelector("#registrar-btn").addEventListener("click", async ()=>{
     let res = await crearConsola(consola);
 
     //Mostar mensaje de exito con SweetAlert2
-    Swal.fire("Consola Creada", "Consola creada exitosamente", "success");
+    await Swal.fire("Consola Creada", "Consola creada exitosamente", "success");
+    //La linea que viene despues del Swal.fire se va a ejecutar solo cuando la persona aprete OK
+
+    //Aqui va a redirigir a otra pagina
+    window.location.href = "ver_consolas";
+
+    //abrir nueva pestaña
+    //window.open("www.google.cl", "_blank");
 });
