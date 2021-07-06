@@ -29,8 +29,10 @@ Route::get("marcas/get", [ConsolasController::class, "getMarcas"]);
 //Route:get("url(endpoint)", [controlador::class, "metodo"]);
 
 //mostrar lista de consolas
-Route::get('consolas/get', [ConsolasController::class, "getConsolas"]);
+Route::get("consolas/get", [ConsolasController::class, "getConsolas"]);
 
 
 //metodo post para ingresar en la base de datos
-Route::post('consolas/post', [ConsolasController::class, "crearConsola"]);
+Route::post("consolas/post", [ConsolasController::class, "crearConsola"]);
+
+Route::post("consolas/delete", [ConsolasController::class,"eliminarConsola"]);
