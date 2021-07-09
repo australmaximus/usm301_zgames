@@ -1,8 +1,13 @@
 // ESTE ARCHIVO VA A TENER LAS OPERACIONES TIPICAS PARA COMUNICARSE CON EL CONTROLADOR
 
 //getConsolas
-const getConsolas = async ()=>{
-    let resp = await axios.get("api/consolas/get"); // peticion hacia api
+const getConsolas = async (filtro = "todos")=>{
+    let resp;
+    if(filtro == "todos"){
+        resp = await axios.get("api/consolas/get"); // peticion hacia api
+    }else{
+        resp = await axios.get(`api/consolas/filtrar?filtro=${filtro}`);
+    }
     return resp.data; //retornar la lista de consolas que estan en la base de datos
 };
 

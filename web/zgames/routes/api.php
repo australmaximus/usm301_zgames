@@ -30,6 +30,7 @@ Route::get("marcas/get", [ConsolasController::class, "getMarcas"]);
 
 //mostrar lista de consolas
 Route::get("consolas/get", [ConsolasController::class, "getConsolas"]);
+Route::get("consolas/filtrar", [ConsolasController::class, "filtrarConsolas"]);
 
 
 //metodo post para ingresar en la base de datos
