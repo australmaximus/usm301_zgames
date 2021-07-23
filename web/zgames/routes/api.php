@@ -7,6 +7,8 @@ use App\Http\Controllers\ConsolasController;
 //Quiero usar el controlador, asi que lo importo, se importa con
 //use namespace/NombreClase
 
+use App\Http\Controllers\JuegosController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -28,6 +30,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get("marcas/get", [ConsolasController::class, "getMarcas"]);
 //Route:get("url(endpoint)", [controlador::class, "metodo"]);
 
+//Rutas del controlador de Consolas
 //mostrar lista de consolas
 Route::get("consolas/get", [ConsolasController::class, "getConsolas"]);
 Route::get("consolas/filtrar", [ConsolasController::class, "filtrarConsolas"]);
@@ -37,3 +40,9 @@ Route::get("consolas/filtrar", [ConsolasController::class, "filtrarConsolas"]);
 Route::post("consolas/post", [ConsolasController::class, "crearConsola"]);
 
 Route::post("consolas/delete", [ConsolasController::class,"eliminarConsola"]);
+
+//Rutas del controlador de Juegos
+Route::get("juegos/get", [JuegosController::class, "getJuegos"]);
+Route::get("juegos/getByConsola". [JuegosController:class, "getJuegosByConsola"]);
+Route::post("juegos/post", [JuegosController::class, "save"]);
+Route::post("juegos/delete", [JuegosController::class, "remove"]);

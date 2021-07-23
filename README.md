@@ -69,3 +69,8 @@
 ``
     php artisan make:model Nombre
 ``
+
+## Tipos de datos y modificadores existentes
+``
+    https://laravel.com/docs/8.x/migrations#available-column-types
+``
