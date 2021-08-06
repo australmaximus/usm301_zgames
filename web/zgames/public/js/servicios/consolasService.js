@@ -24,6 +24,26 @@ const crearConsola =  async (consola)=>{ //arrow functions
     return resp.data; //propiedad de axios que trae los datos que manda php
 };
 
+//findById
+const findById = async (id)=>{
+    let resp = await axios.get(`api/consolas/findById?id=${id}`);
+    return resp.data;
+}
+
+const actualizarConsola = async(consola)=>{
+    try{
+        let resp = await axios.post("api/consolas/actualizar", consola, {
+            headers:{
+                "Content-Type": "application/json"
+            }
+        });
+        return resp.data;
+    }catch(e){
+        return false;
+    }
+    
+}
+
 const eliminarConsola = async(id)=>{
     try{
         let resp = await axios.post("api/consolas/delete", {id}, {
